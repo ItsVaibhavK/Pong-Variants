@@ -64,6 +64,6 @@ The `main.lua` and `Death.lua` files for `Dong` do not contain comments explaini
 2. [Lecture](https://cs50.harvard.edu/games/2018/weeks/0/)
 
 # CREDITS
-As always, I cannot begin to express my gratitude for the people behind all the CS50 courses.<br>In less than a year, I have gone from knowing nothing about programming to being able to write my own programs, web apps, create my own databases, and now - GAMES!
+As always, I cannot begin to express my gratitude for the people behind all the [CS50](https://pll.harvard.edu/course/cs50-introduction-computer-science) courses.<br>In less than a year, I have gone from knowing nothing about programming to being able to write my own programs, web apps, create my own databases, and now - GAMES!
 
 Thank you, [Colton Ogden](https://www.linkedin.com/in/colton-ogden-0514029b), for taking us through this course, and all the staff members at [CS50](https://pll.harvard.edu/course/cs50-introduction-computer-science), for instilling the love of programming in us!
