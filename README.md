@@ -1,3 +1,5 @@
+### [Demo video on YouTube](https://youtu.be/k3hmONNfAvk)
+
 # IDEA
 
 I had been on a roll of completing [CS50](https://pll.harvard.edu/course/cs50-introduction-computer-science)'s courses on the [edX](https://www.edx.org/) platform, and had picked up skills<br>in a variety of programming concepts, languages and applications. That is when I came across [CS50G - CS50’s
@@ -12,6 +14,8 @@ The idea was simple. Using what we had learned so far in the first week, I would
 A regular game of [Pong](https://en.wikipedia.org/wiki/Pong) ends when a player gets to the target score first. Players score when their opponents miss the ball.<br>However, if a player made contact with the DEATH BALL, they would lose the game instantly via "sudden death."<br>Here's how I turned that logic into code.
 
 # EXECUTION
+
+*Note: Players can control the paddles using W and S keys for Player 1, and the up and down arrow keys for Player 2.*
 
 ### APPEARANCE
 I needed the DEATH BALL to be distinguishable from the regular ball. I achieved this by turning the DEATH BALL into its own class,<br>where I could then add the following to its render function to get an *outline* ball instead of a *fill-in* ball:<br>`love.graphics.rectangle('line', self.x, self.y, self.width, self.height)`
