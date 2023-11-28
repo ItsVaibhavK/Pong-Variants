@@ -54,31 +54,43 @@ function love.update(dt)
         else
             ball.dx = -math.random(140, 200)
         end
+    -- determine random behavior using math.random()
     elseif gameState == 'play' then
         if ball:collides(player1) then
             deranged1 = math.random(0, 4)
+            -- normal play
             if deranged1 == 0 then
                 player1CollisionBallMovement()
+            -- player1 gets large paddle
             elseif deranged1 == 1 then
                 player1.height = 40
                 player1CollisionBallMovement()
+            -- player2 gets small paddle
             elseif deranged1 == 2 then
                 player2.height = 10
                 player1CollisionBallMovement()
+            -- these effects are programmed into the paddle movement
+            -- section of the code
             else
                 player1CollisionBallMovement()
             end
         end
+        -- determine random behavior using math.random()
         if ball:collides(player2) then
             deranged2 = math.random(0, 4)
+            -- normal play
             if deranged2 == 0 then
                 player2CollisionBallMovement()
+            -- player2 gets large paddle
             elseif deranged2 == 1 then
                 player2.height = 40
                 player2CollisionBallMovement()
+            -- player1 gets small paddle
             elseif deranged2 == 2 then
                 player1.height = 10
                 player2CollisionBallMovement()
+            -- these effects are programmed into the paddle movement
+            -- section of the code
             else
                 player2CollisionBallMovement()
             end            
@@ -124,6 +136,8 @@ function love.update(dt)
             end
         end
     end
+
+    -- player1's controls get inverted
     if deranged2 == 3 then
         if love.keyboard.isDown('s') then
             player1.dy = -PADDLE_SPEED
@@ -132,6 +146,7 @@ function love.update(dt)
         else
             player1.dy = 0
         end
+    -- player1's paddle speed is halved
     elseif deranged2 == 4 then
         if love.keyboard.isDown('w') then
             player1.dy = -PADDLE_SPEED / 2
@@ -140,6 +155,7 @@ function love.update(dt)
         else
             player1.dy = 0
         end
+    -- player1's movements are normal
     else
         if love.keyboard.isDown('w') then
             player1.dy = -PADDLE_SPEED
@@ -149,6 +165,8 @@ function love.update(dt)
             player1.dy = 0
         end
     end
+
+    -- player2's movements are inverted
     if deranged1 == 3 then
         if love.keyboard.isDown('down') then
             player2.dy = -PADDLE_SPEED
@@ -157,6 +175,7 @@ function love.update(dt)
         else
             player2.dy = 0
         end
+    -- player2's paddle speed is halved
     elseif deranged1 == 4 then
         if love.keyboard.isDown('up') then
             player2.dy = -PADDLE_SPEED / 2
@@ -165,6 +184,7 @@ function love.update(dt)
         else
             player2.dy = 0
         end
+    -- player2's movements are normal
     else
         if love.keyboard.isDown('up') then
             player2.dy = -PADDLE_SPEED
@@ -194,6 +214,8 @@ function love.keypressed(key)
             gameState = 'play'
         elseif gameState == 'done' then
             gameState = 'serve'
+            -- reset any effects of the randomized behavior of
+            -- the paddles
             player1.height = 20
             player2.height = 20
             deranged1 = 0
@@ -215,7 +237,7 @@ end
 
 function love.draw()
     push:apply('start')
-
+    -- black background screen for "wrong"
     love.graphics.clear(0, 0, 0, 1)
     if gameState == 'start' then
         love.graphics.setFont(smallFont)
@@ -260,6 +282,9 @@ function displayFPS()
     love.graphics.print('FPS: ' .. tostring(love.timer.getFPS()), 10, 10)
 end
 
+
+-- regular ball movement after collision with player1's paddle
+-- abstracted away here
 function player1CollisionBallMovement()
     ball.dx = -ball.dx * 1.03
     ball.x = player1.x + 5
@@ -272,6 +297,8 @@ function player1CollisionBallMovement()
 end
 
 
+-- regular ball movement after collision with player2's paddle
+-- abstracted away here
 function player2CollisionBallMovement()
     ball.dx = -ball.dx * 1.03
     ball.x = player2.x - 4
