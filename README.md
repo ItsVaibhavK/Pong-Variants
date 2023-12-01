@@ -1,6 +1,7 @@
 # PONG VARIANT DEMOS
 1. [DONG - Demo video on YouTube](https://youtu.be/k3hmONNfAvk)
 2. [WRONG - Demo video on YouTube](https://youtu.be/RISLevwBapw)
+3. [DEAD WRONG - Demo video on YouTube](https://youtu.be/cNqA6Q7hTE4)
 
 # PREFACE
 I had been on a roll of completing [CS50](https://pll.harvard.edu/course/cs50-introduction-computer-science)'s courses on the [edX](https://www.edx.org/) platform, and had picked up skills in a variety of programming concepts, languages and applications.<br>That is when I came across [CS50G - CS50’s
@@ -185,9 +186,21 @@ A similar block of code controlled side effects from the perspective of Player 2
 ## CONCLUSION
 This was only the first version of the variant [Wrong](https://github.com/ItsVaibhavK/Pong-Variants.git). I think it would truly make the game *intense* if I were to add in the DEATH BALL element to [Wrong](https://github.com/ItsVaibhavK/Pong-Variants.git)<br>from my first variant, [Dong - Death Pong](https://github.com/ItsVaibhavK/Pong-Variants.git). Just *imagine*.
 
+*Update! I did finally make the variant I was talking about. Check it out in the section below!*
+
+# DEAD WRONG
+
+There is not much to explain for this variant, it combines the concepts and rules I came up with when I created [Dong - Death Pong](https://github.com/ItsVaibhavK/Pong-Variants.git) and [Wrong](https://github.com/ItsVaibhavK/Pong-Variants.git) (hence the name, [DEAD WRONG](https://github.com/ItsVaibhavK/Pong-Variants.git)).
+
+To understand how [DEAD WRONG](https://github.com/ItsVaibhavK/Pong-Variants.git) works, you can read up on the mechanics that I've detailed above in the first two [Pong](https://en.wikipedia.org/wiki/Pong) variants I created.
+
+The only change I made has to do with the DEATH BALL's appearance. I set its color to red using `love.graphics.setColor(1, 0, 0, 1)`,<br>and instead of it being an *outline* like it was in [Dong - Death Pong](https://github.com/ItsVaibhavK/Pong-Variants.git), I turned it into a *filled-out* ball using<br>`love.graphics.rectangle('fill', self.x, self.y, self.width, self.height)`.<br>These changes are visible in the `Death.lua` file.
+
+Now, *this* is a *frustratingly* fun game to mess about on!
+
 
 # NOTES
-The files for both the variants do not contain comments explaining what the rest of the code is doing, only comments pointing out the parts I had added for my idea.<br>This is by design, to keep the code as neat as possible. If you're interested in the fully commented version of the code, or if you'd like to watch the lecture<br>that explains the original base code in depth, allow me to point you in the right direction:<br>
+The files for the variants do not contain comments explaining what the rest of the code is doing, only comments pointing out the parts I had added for my idea.<br>This is by design, to keep the code as neat as possible. If you're interested in the fully commented version of the code, or if you'd like to watch the lecture<br>that explains the original base code in depth, allow me to point you in the right direction:<br>
 1. [Pong code with comments](https://github.com/ItsVaibhavK/CS50G-2023/blob/main/pong/main.lua)
 2. [Lecture](https://cs50.harvard.edu/games/2018/weeks/0/)
 
